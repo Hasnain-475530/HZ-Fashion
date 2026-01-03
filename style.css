@@ -244,6 +244,7 @@ main {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  text-decoration:none;
 }
 
 /* Admin Page */
@@ -283,3 +284,4 @@ main {
     font-size: 32px;
   }
 }
+
