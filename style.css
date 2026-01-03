@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors Variables */
+:root {
+  --primary: #c084fc;
+  --secondary: #a7f3d0;
+  --bg: #fdfcff;
+  --card: #ffffff;
+  --text: #374151;
+
+  --dark-bg: #0f172a;
+  --dark-card: #1e293b;
+}
+
+/* Body */
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.dark body {
+  background: var(--dark-bg);
+  color: #e5e7eb;
+}
+
+h2 {
+  color: var(--primary);
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* SideBar */
+header.sidebar {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--secondary);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+header.sidebar h2 {
+  color: var(--primary);
+}
+
+header.sidebar nav a {
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+header.sidebar nav a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Main */
+main {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+/* Header Image */
+.headerimg {
+  height: 300px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* Products */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 220px;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  position: relative;
+}
+
+.dark .card {
+  background: var(--dark-card);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card .info {
+  padding: 12px;
+}
+
+.card .price {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Buttons */
+.btn,
+.card button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover,
+.card button:hover {
+  background: #a855f7;
+}
+
+/* Wishlist */
+.wish {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wish.active {
+  color: var(--primary);
+  transform: scale(1.2);
+}
+
+/* Cart & Wishlist */
+.cart-section {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Authentication */
+.auth-section {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 12px;
+}
+
+.auth-section input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* AI Chat */
+#aiChat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+}
+
+#aiChat button {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#chatBox {
+  display: none;
+  background: var(--card);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Hello Page */
+.hl {
+  margin-top: 120px;
+  text-align: center;
+  font-size: 48px;
+  color: var(--primary);
+}
+
+.hello-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Admin Page */
+.adminpg-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.adminpg {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  header.sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  .products {
+    justify-content: center;
+  }
+
+  .hl {
+    font-size: 32px;
+  }
+}
